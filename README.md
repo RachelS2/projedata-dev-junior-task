@@ -4,7 +4,7 @@ Este repositório contém a minha solução para o desafio técnico proposto par
 
 ## 🚀 Tecnologias utilizadas
 
-* Java
+* Java, JDK versão 17.0.17 
 * API de datas (`LocalDate`, `Period`)
 * `BigDecimal` para cálculos financeiros
 * Streams e Collections
