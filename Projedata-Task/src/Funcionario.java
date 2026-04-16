@@ -19,8 +19,8 @@ public class Funcionario extends Pessoa {
 
     public String pegarSalarioFormatado() {
         // Retorna o salário formatado em Reais Brasileiros
-        NumberFormat formatadorDeNumero = NumberFormat.getInstance(new Locale("pt", "BR"));
-        return "R$" + formatadorDeNumero.format((pegarSalario()));
+        NumberFormat formatadorDeMoeda = NumberFormat.getInstance(new Locale("pt", "BR"));
+        return "R$" + formatadorDeMoeda.format((pegarSalario()));
     }
 
     public Funcao pegarFuncao() {

@@ -31,7 +31,6 @@ public class Principal {
         listaDeFuncionarios.remove(joao);
         System.out.println("\nO funcionário João foi removido da lista.");
 
-        NumberFormat formatadorDeNumero = NumberFormat.getInstance(new Locale("pt", "BR"));
 
         System.out.println("\nImprime dados de funcionarios:");
         for (Funcionario funcionario : listaDeFuncionarios) {
@@ -83,11 +82,13 @@ public class Principal {
                 .sorted(Comparator.comparing(Funcionario::pegarNome))
                 .forEach(System.out::println);
 
+        NumberFormat formatadorDeMoeda = NumberFormat.getInstance(new Locale("pt", "BR"));
+
         BigDecimal total = BigDecimal.ZERO;
         for (Funcionario f : listaDeFuncionarios) {
             total = total.add(f.pegarSalario());
         }
-        System.out.println("\nSoma dos salários dos funcionários: R$" + formatadorDeNumero.format(total) + "\n");
+        System.out.println("\nSoma dos salários dos funcionários: R$" + formatadorDeMoeda.format(total) + "\n");
 
         BigDecimal salarioMinimo = new BigDecimal("1212.00");
 
@@ -96,7 +97,7 @@ public class Principal {
                     .divide(salarioMinimo, 2, RoundingMode.HALF_UP);
 
             System.out.println(
-                    f.pegarNome() + " ganha " + formatadorDeNumero.format(quantidade) + " salários mínimos."
+                    f.pegarNome() + " ganha " + formatadorDeMoeda.format(quantidade) + " salários mínimos."
             );
         }
     }
