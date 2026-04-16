@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Projedata-Task/Projedata-Task.iml" filepath="$PROJECT_DIR$/Projedata-Task/Projedata-Task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/projedata-dev-junior-task.iml" filepath="$PROJECT_DIR$/.idea/projedata-dev-junior-task.iml" />
+    </modules>
+  </component>
+</project>
