@@ -49,9 +49,13 @@ O projeto realiza operações sobre uma lista de funcionários, incluindo:
 git clone https://github.com/RachelS2/projedata-dev-junior-task.git
 ```
 
-2. Abra o projeto em sua IDE (utilizado: IntelliJ)
+2. Abra o projeto em sua IDE (utilizado no desenvolvimento: IntelliJ)
 
 3. Execute a classe `Principal`
+
+4. Retorno esperado no terminal:
+
+<img width="1279" height="672" alt="image" src="https://github.com/user-attachments/assets/b32a3ba9-ad6b-471c-80d1-9ef302c5d435" />
 
 ---
 
