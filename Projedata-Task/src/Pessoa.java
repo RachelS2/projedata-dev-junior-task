@@ -18,9 +18,24 @@ abstract class Pessoa {
         return this.dataDeNascimento;
     }
 
+    /**
+     * Retorna a data de nascimento formatada de acordo com o padrão informado.
+     *
+     * @param pattern padrão de formatação de data (ex: "dd/MM/yyyy", "yyyy-MM-dd")
+     * @return data de nascimento formatada como String
+     * @throws IllegalArgumentException se o pattern for inválido
+     */
+    public String pegarDataDeNascimentoFormatada(String pattern) {
+        DateTimeFormatter formatadorDeData = DateTimeFormatter.ofPattern(pattern);
+        return formatadorDeData.format(pegarDataDeNascimento());
+    }
+
+    /**
+     * Retorna a data de nascimento no formato padrão brasileiro (dd/MM/yyyy).
+     *
+     * @return data de nascimento formatada como string
+     */
     public String pegarDataDeNascimentoFormatada() {
-        // Retorna a data de nascimento em formato dd/MM/yyyy
-        DateTimeFormatter formatadorDeData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return formatadorDeData.format((pegarDataDeNascimento()));
+        return this.pegarDataDeNascimentoFormatada("dd/MM/yyyy");
     }
 }

@@ -17,10 +17,24 @@ public class Funcionario extends Pessoa {
         return this.salario;
     }
 
+    /**
+     * Sobrecarga de Método
+     * @return salário em Reais como String
+     */
     public String pegarSalarioFormatado() {
         // Retorna o salário formatado em Reais Brasileiros
-        NumberFormat formatadorDeMoeda = NumberFormat.getInstance(new Locale("pt", "BR"));
-        return "R$" + formatadorDeMoeda.format((pegarSalario()));
+        return this.pegarSalarioFormatado(new Locale("pt", "BR"));
+    }
+
+    /**
+     * Sobrecarga de Método
+     * @param locale: define o formato a ser aplicado no salário
+     * @return salário formatado como String
+     */
+    public String pegarSalarioFormatado(Locale locale) {
+
+        NumberFormat formatador = NumberFormat.getCurrencyInstance(locale);
+        return formatador.format(pegarSalario());
     }
 
     public Funcao pegarFuncao() {

@@ -3,16 +3,13 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Principal {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
+
         System.out.printf("Olá!\nEssa é a resolução do Teste Mão na Massa, para a vaga de dev júnior na Projedata, feito por Rachel Barino Silva em 16/04/2026.\nObrigada desde já pela atenção!\n");
 
         Funcionario maria = new Funcionario("Maria", LocalDate.of(2000, 10, 18), new BigDecimal("2009.44"), Funcao.Operador );
@@ -31,10 +28,8 @@ public class Principal {
         listaDeFuncionarios.remove(joao);
         System.out.println("\nO funcionário João foi removido da lista.");
 
-
         System.out.println("\nImprime dados de funcionarios:");
         for (Funcionario funcionario : listaDeFuncionarios) {
-
             System.out.println(funcionario.toString());
         }
 
@@ -56,7 +51,6 @@ public class Principal {
                 System.out.println(" - " + funcionario.pegarNome());
             }
         }
-
 
         System.out.println("\nImprimindo funcionários que nasceram em outubro ou dezembro:");
         for (Funcionario f : listaDeFuncionarios) {
