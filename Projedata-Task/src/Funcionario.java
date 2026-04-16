@@ -1,5 +1,7 @@
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import java.time.LocalDate;
+import java.util.Locale;
 
 public class Funcionario extends Pessoa {
     private BigDecimal salario;
@@ -15,6 +17,12 @@ public class Funcionario extends Pessoa {
         return this.salario;
     }
 
+    public String pegarSalarioFormatado() {
+        // Retorna o salário formatado em Reais Brasileiros
+        NumberFormat formatadorDeNumero = NumberFormat.getInstance(new Locale("pt", "BR"));
+        return "R$" + formatadorDeNumero.format((pegarSalario()));
+    }
+
     public Funcao pegarFuncao() {
         return this.funcao;
     }
@@ -26,8 +34,8 @@ public class Funcionario extends Pessoa {
     @Override
     public String toString() {
         return "Nome: " + pegarNome() +
-                ", Data de Nascimento: " + pegarDataDeNascimento() +
-                ", Salário: R$" + pegarSalario() +
+                ", Data de Nascimento: " + pegarDataDeNascimentoFormatada() +
+                ", Salário: " + pegarSalarioFormatado() +
                 ", Função: " + pegarFuncao();
     }
 }

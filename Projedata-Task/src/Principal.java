@@ -31,13 +31,10 @@ public class Principal {
         listaDeFuncionarios.remove(joao);
         System.out.println("\nO funcionário João foi removido da lista.");
 
-        DateTimeFormatter formatadorDeData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         NumberFormat formatadorDeNumero = NumberFormat.getInstance(new Locale("pt", "BR"));
 
         System.out.println("\nImprime dados de funcionarios:");
         for (Funcionario funcionario : listaDeFuncionarios) {
-            String dataFormatada = funcionario.pegarDataDeNascimento().format(formatadorDeData);
-            String salarioFormatado = formatadorDeNumero.format(funcionario.pegarSalario());
 
             System.out.println(funcionario.toString());
         }
@@ -46,7 +43,7 @@ public class Principal {
         for (Funcionario f : listaDeFuncionarios) {
             BigDecimal novoSalario = f.pegarSalario().multiply(new BigDecimal("1.10"));
             f.mudarSalario(novoSalario);
-            System.out.println("O novo salário de " + f.pegarNome() + " é R$" + formatadorDeNumero.format(novoSalario));
+            System.out.println("O novo salário de " + f.pegarNome() + " é " + f.pegarSalarioFormatado());
         }
         Map<Funcao, List<Funcionario>> funcionariosPorFuncao =
                 listaDeFuncionarios.stream()

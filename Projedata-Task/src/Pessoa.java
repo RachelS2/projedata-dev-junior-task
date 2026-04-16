@@ -1,5 +1,6 @@
-import java.math.BigDecimal;
+
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 abstract class Pessoa {
      private String nome;
@@ -15,5 +16,11 @@ abstract class Pessoa {
 
     public LocalDate pegarDataDeNascimento() {
         return this.dataDeNascimento;
+    }
+
+    public String pegarDataDeNascimentoFormatada() {
+        // Retorna a data de nascimento em formato dd/MM/yyyy
+        DateTimeFormatter formatadorDeData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return formatadorDeData.format((pegarDataDeNascimento()));
     }
 }
